@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { Button, Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./Components/NavBar";
+import GameGrid from "./Components/GameGrid";
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
       <GridItem area="aside" display={{ base: "none", lg: "block" }}>
         Aside
       </GridItem>
-      <GridItem area="main">Main</GridItem>
+      <GridItem area="main">
+        <GameGrid />
+      </GridItem>
     </Grid>
   );
 }
