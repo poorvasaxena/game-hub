@@ -1,0 +1,16 @@
+import { Box } from '@chakra-ui/react'
+import { ReactNode } from 'react'
+
+interface Props{
+    children :ReactNode
+}
+
+const GameCradcontainer = ({children}:Props) => {
+  return (
+   <Box  width ='300px' borderRadius={10} overflow='hidden'>
+
+   </Box>
+  )
+}
+
+export default GameCradcontainer
