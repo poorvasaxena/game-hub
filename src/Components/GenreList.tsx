@@ -4,10 +4,10 @@ import croppedImageUrl from '../Services/image-url';
 
 
 interface Props{
-    onSelectGenre : (genre:Genre) =>void;
+    onSelectGenre : (genre:Genre) => void;
     selectedGenre: Genre | null;
 }
-const GenreList = ({onSelectGenre,selectedGenre}:Props) => {
+const GenreList = ({onSelectGenre,selectedGenre}: Props) => {
     const {data} = useGenres();
     console.log("Data",data)
 
