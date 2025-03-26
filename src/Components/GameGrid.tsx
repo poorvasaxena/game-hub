@@ -18,15 +18,13 @@ const GameGrid = ({gameQurey}: Props)=>{
  console.log("games",data[0])
  const skeletons =[1,2,3,4,5,6];
 
+ if(error) return<Text>{error}</Text>;
   return (
-    <>
-      {error && <Text color="red.500">{error}</Text>}
       <SimpleGrid columns={{sm :1,md:2,lg:3,xl:4}} spacing={6} padding='10px'>
         {isloading && skeletons.map(skeleton => <GameCradcontainer key={skeleton}><GameCardSkeleton/></GameCradcontainer>)}
        {data.map((game) =>(<GameCradcontainer key={game.id}><GameCard game={game}/></GameCradcontainer>))}
     
       </SimpleGrid>
-    </>
   );
 };
 
