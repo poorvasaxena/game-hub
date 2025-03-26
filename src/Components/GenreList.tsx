@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Image, List, ListItem, Text } from '@chakra-ui/react';
+import { Button, Heading, HStack, Image, List, ListItem, Spinner, Text } from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres'
 import croppedImageUrl from '../Services/image-url';
 import { normalizePath } from 'vite';
@@ -9,9 +9,11 @@ interface Props{
     selectedGenre: Genre | null;
 }
 const GenreList = ({onSelectGenre,selectedGenre}: Props) => {
-    const {data} = useGenres();
-    console.log("Data",data)
-
+    const {data,isLoading,error} = useGenres();
+ 
+    if (error) return null;
+    if(isLoading) return<Spinner/>
+    
   return (
     <>
     <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
