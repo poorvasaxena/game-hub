@@ -8,7 +8,7 @@ interface Props{
 
 const SortSelector = ({onSelectOrder,sortOrder}: Props) => {
     const sortOrders = [
-        {value:'Relevance', label : 'Relevance'},
+        {value:'', label : 'Relevance'},
         {value:'-added', label : 'Date added'},
         {value:'name', label : 'Name'},
         {value:'-released', label : 'Release Date'},
@@ -21,7 +21,7 @@ const SortSelector = ({onSelectOrder,sortOrder}: Props) => {
         <Menu>
          <MenuButton as={Button} rightIcon={<BsChevronDown/>}>Order by : {currentSortorder?.label}</MenuButton>
          <MenuList>
-           {sortOrders.map(order => <MenuItem onClick={() => onSelectOrder(order.value)} key={order.value}>{order.label}</MenuItem>)}
+           {sortOrders.map(order => <MenuItem onClick={() => onSelectOrder(order.value)} key={order.value} value={order.value}>{order.label}</MenuItem>)}
          </MenuList>
         </Menu>
        )
